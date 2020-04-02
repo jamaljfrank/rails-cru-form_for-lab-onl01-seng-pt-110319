@@ -3,10 +3,10 @@
 <%= form_for(@artist) do |f| %>
 
   <%= f.label :name %><br>
-  <%= f.text_field @artist.name %><br>
+  <%= f.text_field :name %><br>
 
   <%= f.label :bio %><br>
-  <%= f.text_area @artist.bio %><br>
+  <%= f.text_area :bio %><br>
 
   <%= f.submit %>
 
