@@ -9,8 +9,16 @@ class ArtistsController < ApplicationController
   end
   
   def create
-    @student = Student.new(student_params(:first_name, :last_name))
-    @student.save
-    redirect_to student_path(@student)
+    @artist = Artist.new(artist_params(:name, :bio))
+    @artist.save
+    redirect_to artist_path(@artist)
   end
+  
+  private
+ 
+  def artist_params(*args)
+    params.require(:artist).permit(*args)
+  end
+
+	
 end
